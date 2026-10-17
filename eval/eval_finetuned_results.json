@@ -1,0 +1,533 @@
+{
+  "summary": {
+    "model": "gemma-4-E4B-it + LoRA r16 (fine-tuned on 80 invoice pairs)",
+    "total": 20,
+    "json_valid": 20,
+    "schema_ok": 13,
+    "all_fields_exact": 17,
+    "invented_po_when_missing": 0,
+    "field_accuracy": {
+      "vendor": 1.0,
+      "invoice_number": 1.0,
+      "invoice_date": 1.0,
+      "base_amount": 0.95,
+      "gst_amount": 0.85,
+      "total_amount": 1.0,
+      "po_reference": 1.0,
+      "payment_terms_days": 1.0
+    }
+  },
+  "cases": [
+    {
+      "case": 0,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Kiran Wholesale Mart\",\n  \"invoice_number\": \"INV-2026-90173\",\n  \"invoice_date\": \"2026-11-17\",\n  \"base_amount\": 6600.0,\n  \"gst_amount\": 330.0,\n  \"total_amount\": 6930.0,\n  \"payment_terms_d",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Kiran Wholesale Mart",
+        "invoice_number": "INV-2026-90173",
+        "invoice_date": "2026-11-17",
+        "base_amount": 6600.0,
+        "gst_amount": 330.0,
+        "total_amount": 6930.0,
+        "payment_terms_days": 45
+      },
+      "gold": {
+        "vendor": "Kiran Wholesale Mart",
+        "invoice_number": "INV-2026-90173",
+        "invoice_date": "2026-11-17",
+        "base_amount": 6600.0,
+        "gst_amount": 330.0,
+        "total_amount": 6930.0,
+        "po_reference": null,
+        "payment_terms_days": 45
+      }
+    },
+    {
+      "case": 1,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Grover Steel Traders\",\n  \"invoice_number\": \"INV-2026-88504\",\n  \"invoice_date\": \"2026-06-16\",\n  \"base_amount\": 8900.0,\n  \"gst_amount\": 1068.0,\n  \"total_amount\": 9968.0\n}",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Grover Steel Traders",
+        "invoice_number": "INV-2026-88504",
+        "invoice_date": "2026-06-16",
+        "base_amount": 8900.0,
+        "gst_amount": 1068.0,
+        "total_amount": 9968.0
+      },
+      "gold": {
+        "vendor": "Grover Steel Traders",
+        "invoice_number": "INV-2026-88504",
+        "invoice_date": "2026-06-16",
+        "base_amount": 8900.0,
+        "gst_amount": 1068.0,
+        "total_amount": 9968.0,
+        "po_reference": null,
+        "payment_terms_days": null
+      }
+    },
+    {
+      "case": 2,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Chawla Chemicals Pvt Ltd\",\n  \"invoice_number\": \"INV-2026-91959\",\n  \"invoice_date\": \"2026-05-27\",\n  \"base_amount\": 135800.0,\n  \"gst_amount\": 38024.0,\n  \"total_amount\": 173824.0,\n  \"po_re",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Chawla Chemicals Pvt Ltd",
+        "invoice_number": "INV-2026-91959",
+        "invoice_date": "2026-05-27",
+        "base_amount": 135800.0,
+        "gst_amount": 38024.0,
+        "total_amount": 173824.0,
+        "po_reference": "559517169",
+        "payment_terms_days": 30
+      },
+      "gold": {
+        "vendor": "Chawla Chemicals Pvt Ltd",
+        "invoice_number": "INV-2026-91959",
+        "invoice_date": "2026-05-27",
+        "base_amount": 135800.0,
+        "gst_amount": 38024.0,
+        "total_amount": 173824.0,
+        "po_reference": "559517169",
+        "payment_terms_days": 30
+      }
+    },
+    {
+      "case": 3,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Iyer Logistics Solutions\",\n  \"invoice_number\": \"INV-2026-57739\",\n  \"invoice_date\": \"2026-07-03\",\n  \"base_amount\": 199300.0,\n  \"gst_amount\": 9965.0,\n  \"total_amount\": 209265.0,\n  \"po_ref",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Iyer Logistics Solutions",
+        "invoice_number": "INV-2026-57739",
+        "invoice_date": "2026-07-03",
+        "base_amount": 199300.0,
+        "gst_amount": 9965.0,
+        "total_amount": 209265.0,
+        "po_reference": "556539837",
+        "payment_terms_days": 45
+      },
+      "gold": {
+        "vendor": "Iyer Logistics Solutions",
+        "invoice_number": "INV-2026-57739",
+        "invoice_date": "2026-07-03",
+        "base_amount": 199300.0,
+        "gst_amount": 9965.0,
+        "total_amount": 209265.0,
+        "po_reference": "556539837",
+        "payment_terms_days": 45
+      }
+    },
+    {
+      "case": 4,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Nanda Electricals\",\n  \"invoice_number\": \"INV-2026-29313\",\n  \"invoice_date\": \"2026-01-02\",\n  \"base_amount\": 55100.0,\n  \"gst_amount\": 6612.0,\n  \"total_amount\": 61712.0,\n  \"po_reference\": ",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Nanda Electricals",
+        "invoice_number": "INV-2026-29313",
+        "invoice_date": "2026-01-02",
+        "base_amount": 55100.0,
+        "gst_amount": 6612.0,
+        "total_amount": 61712.0,
+        "po_reference": "558971465",
+        "payment_terms_days": 15
+      },
+      "gold": {
+        "vendor": "Nanda Electricals",
+        "invoice_number": "INV-2026-29313",
+        "invoice_date": "2026-01-02",
+        "base_amount": 55100.0,
+        "gst_amount": 6612.0,
+        "total_amount": 61712.0,
+        "po_reference": "558971465",
+        "payment_terms_days": 15
+      }
+    },
+    {
+      "case": 5,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Kiran Wholesale Mart\",\n  \"invoice_number\": \"INV-2026-68878\",\n  \"invoice_date\": \"2026-10-09\",\n  \"base_amount\": 170700.0,\n  \"gst_amount\": 8535.0,\n  \"total_amount\": 179235.0,\n  \"payment_te",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Kiran Wholesale Mart",
+        "invoice_number": "INV-2026-68878",
+        "invoice_date": "2026-10-09",
+        "base_amount": 170700.0,
+        "gst_amount": 8535.0,
+        "total_amount": 179235.0,
+        "payment_terms_days": 15
+      },
+      "gold": {
+        "vendor": "Kiran Wholesale Mart",
+        "invoice_number": "INV-2026-68878",
+        "invoice_date": "2026-10-09",
+        "base_amount": 170700.0,
+        "gst_amount": 8535.0,
+        "total_amount": 179235.0,
+        "po_reference": null,
+        "payment_terms_days": 15
+      }
+    },
+    {
+      "case": 6,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Sundaram Textiles Ltd\",\n  \"invoice_number\": \"INV-2026-17455\",\n  \"invoice_date\": \"2026-09-03\",\n  \"base_amount\": 179300.0,\n  \"gst_amount\": 32274.0,\n  \"total_amount\": 211574.0,\n  \"payment_",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Sundaram Textiles Ltd",
+        "invoice_number": "INV-2026-17455",
+        "invoice_date": "2026-09-03",
+        "base_amount": 179300.0,
+        "gst_amount": 32274.0,
+        "total_amount": 211574.0,
+        "payment_terms_days": 30
+      },
+      "gold": {
+        "vendor": "Sundaram Textiles Ltd",
+        "invoice_number": "INV-2026-17455",
+        "invoice_date": "2026-09-03",
+        "base_amount": 179300.0,
+        "gst_amount": 32274.0,
+        "total_amount": 211574.0,
+        "po_reference": null,
+        "payment_terms_days": 30
+      }
+    },
+    {
+      "case": 7,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Sharma Traders Pvt Ltd\",\n  \"invoice_number\": \"INV-2026-56357\",\n  \"invoice_date\": \"2026-09-28\",\n  \"base_amount\": 88200.0,\n  \"gst_amount\": 24696.0,\n  \"total_amount\": 112896.0,\n  \"po_refer",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Sharma Traders Pvt Ltd",
+        "invoice_number": "INV-2026-56357",
+        "invoice_date": "2026-09-28",
+        "base_amount": 88200.0,
+        "gst_amount": 24696.0,
+        "total_amount": 112896.0,
+        "po_reference": "553592974",
+        "payment_terms_days": 30
+      },
+      "gold": {
+        "vendor": "Sharma Traders Pvt Ltd",
+        "invoice_number": "INV-2026-56357",
+        "invoice_date": "2026-09-28",
+        "base_amount": 88200.0,
+        "gst_amount": 24696.0,
+        "total_amount": 112896.0,
+        "po_reference": "553592974",
+        "payment_terms_days": 30
+      }
+    },
+    {
+      "case": 8,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Reddy Agro Supplies\",\n  \"invoice_number\": \"INV-2026-40512\",\n  \"invoice_date\": \"2026-02-13\",\n  \"base_amount\": 61900.0,\n  \"gst_amount\": 17332.0,\n  \"total_amount\": 79232.0,\n  \"po_reference",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Reddy Agro Supplies",
+        "invoice_number": "INV-2026-40512",
+        "invoice_date": "2026-02-13",
+        "base_amount": 61900.0,
+        "gst_amount": 17332.0,
+        "total_amount": 79232.0,
+        "po_reference": "558606962",
+        "payment_terms_days": 45
+      },
+      "gold": {
+        "vendor": "Reddy Agro Supplies",
+        "invoice_number": "INV-2026-40512",
+        "invoice_date": "2026-02-13",
+        "base_amount": 61900.0,
+        "gst_amount": 17332.0,
+        "total_amount": 79232.0,
+        "po_reference": "558606962",
+        "payment_terms_days": 45
+      }
+    },
+    {
+      "case": 9,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Sundaram Textiles Ltd\",\n  \"invoice_number\": \"INV-2026-15778\",\n  \"invoice_date\": \"2026-01-11\",\n  \"base_amount\": 162900.0,\n  \"gst_amount\": 19548.0,\n  \"total_amount\": 182448.0\n}",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Sundaram Textiles Ltd",
+        "invoice_number": "INV-2026-15778",
+        "invoice_date": "2026-01-11",
+        "base_amount": 162900.0,
+        "gst_amount": 19548.0,
+        "total_amount": 182448.0
+      },
+      "gold": {
+        "vendor": "Sundaram Textiles Ltd",
+        "invoice_number": "INV-2026-15778",
+        "invoice_date": "2026-01-11",
+        "base_amount": 162900.0,
+        "gst_amount": 19548.0,
+        "total_amount": 182448.0,
+        "po_reference": null,
+        "payment_terms_days": null
+      }
+    },
+    {
+      "case": 10,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Reddy Agro Supplies\",\n  \"invoice_number\": \"INV-2026-89457\",\n  \"invoice_date\": \"2026-09-04\",\n  \"base_amount\": 83800.0,\n  \"gst_amount\": 15084.0,\n  \"total_amount\": 98884.0,\n  \"po_reference",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Reddy Agro Supplies",
+        "invoice_number": "INV-2026-89457",
+        "invoice_date": "2026-09-04",
+        "base_amount": 83800.0,
+        "gst_amount": 15084.0,
+        "total_amount": 98884.0,
+        "po_reference": "554188992",
+        "payment_terms_days": 45
+      },
+      "gold": {
+        "vendor": "Reddy Agro Supplies",
+        "invoice_number": "INV-2026-89457",
+        "invoice_date": "2026-09-04",
+        "base_amount": 83800.0,
+        "gst_amount": 15084.0,
+        "total_amount": 98884.0,
+        "po_reference": "554188992",
+        "payment_terms_days": 45
+      }
+    },
+    {
+      "case": 11,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Iyer Logistics Solutions\",\n  \"invoice_number\": \"INV-2026-89840\",\n  \"invoice_date\": \"2026-11-06\",\n  \"base_amount\": 114300.0,\n  \"gst_amount\": 13716.0,\n  \"total_amount\": 128016.0,\n  \"po_re",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Iyer Logistics Solutions",
+        "invoice_number": "INV-2026-89840",
+        "invoice_date": "2026-11-06",
+        "base_amount": 114300.0,
+        "gst_amount": 13716.0,
+        "total_amount": 128016.0,
+        "po_reference": "555107245",
+        "payment_terms_days": 30
+      },
+      "gold": {
+        "vendor": "Iyer Logistics Solutions",
+        "invoice_number": "INV-2026-89840",
+        "invoice_date": "2026-11-06",
+        "base_amount": 114300.0,
+        "gst_amount": 13716.0,
+        "total_amount": 128016.0,
+        "po_reference": "555107245",
+        "payment_terms_days": 30
+      }
+    },
+    {
+      "case": 12,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Verma Supplies Co\",\n  \"invoice_number\": \"INV-2026-84341\",\n  \"invoice_date\": \"2026-12-11\",\n  \"base_amount\": 48232.14,\n  \"gst_amount\": 5787.86,\n  \"total_amount\": 54320.0,\n  \"po_reference\"",
+      "ok_fields": 6,
+      "pred": {
+        "vendor": "Verma Supplies Co",
+        "invoice_number": "INV-2026-84341",
+        "invoice_date": "2026-12-11",
+        "base_amount": 48232.14,
+        "gst_amount": 5787.86,
+        "total_amount": 54320.0,
+        "po_reference": "559375710",
+        "payment_terms_days": 60
+      },
+      "gold": {
+        "vendor": "Verma Supplies Co",
+        "invoice_number": "INV-2026-84341",
+        "invoice_date": "2026-12-11",
+        "base_amount": 48500.0,
+        "gst_amount": 5820.0,
+        "total_amount": 54320.0,
+        "po_reference": "559375710",
+        "payment_terms_days": 60
+      }
+    },
+    {
+      "case": 13,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Iyer Logistics Solutions\",\n  \"invoice_number\": \"INV-2026-30032\",\n  \"invoice_date\": \"2026-06-25\",\n  \"base_amount\": 38000.0,\n  \"gst_amount\": 1900.0,\n  \"total_amount\": 39900.0,\n  \"po_refer",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Iyer Logistics Solutions",
+        "invoice_number": "INV-2026-30032",
+        "invoice_date": "2026-06-25",
+        "base_amount": 38000.0,
+        "gst_amount": 1900.0,
+        "total_amount": 39900.0,
+        "po_reference": "559897858",
+        "payment_terms_days": 15
+      },
+      "gold": {
+        "vendor": "Iyer Logistics Solutions",
+        "invoice_number": "INV-2026-30032",
+        "invoice_date": "2026-06-25",
+        "base_amount": 38000.0,
+        "gst_amount": 1900.0,
+        "total_amount": 39900.0,
+        "po_reference": "559897858",
+        "payment_terms_days": 15
+      }
+    },
+    {
+      "case": 14,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Gupta Enterprises\",\n  \"invoice_number\": \"INV-2026-17592\",\n  \"invoice_date\": \"2026-04-19\",\n  \"base_amount\": 198900.0,\n  \"gst_amount\": 70292.0,\n  \"total_amount\": 254592.0,\n  \"po_reference",
+      "ok_fields": 7,
+      "pred": {
+        "vendor": "Gupta Enterprises",
+        "invoice_number": "INV-2026-17592",
+        "invoice_date": "2026-04-19",
+        "base_amount": 198900.0,
+        "gst_amount": 70292.0,
+        "total_amount": 254592.0,
+        "po_reference": "552321324",
+        "payment_terms_days": 15
+      },
+      "gold": {
+        "vendor": "Gupta Enterprises",
+        "invoice_number": "INV-2026-17592",
+        "invoice_date": "2026-04-19",
+        "base_amount": 198900.0,
+        "gst_amount": 55692.0,
+        "total_amount": 254592.0,
+        "po_reference": "552321324",
+        "payment_terms_days": 15
+      }
+    },
+    {
+      "case": 15,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Deepak Materials Pvt Ltd\",\n  \"invoice_number\": \"INV-2026-50857\",\n  \"invoice_date\": \"2026-07-22\",\n  \"base_amount\": 138000.0,\n  \"gst_amount\": 38640.0,\n  \"total_amount\": 176640.0,\n  \"po_re",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Deepak Materials Pvt Ltd",
+        "invoice_number": "INV-2026-50857",
+        "invoice_date": "2026-07-22",
+        "base_amount": 138000.0,
+        "gst_amount": 38640.0,
+        "total_amount": 176640.0,
+        "po_reference": "557264956",
+        "payment_terms_days": 60
+      },
+      "gold": {
+        "vendor": "Deepak Materials Pvt Ltd",
+        "invoice_number": "INV-2026-50857",
+        "invoice_date": "2026-07-22",
+        "base_amount": 138000.0,
+        "gst_amount": 38640.0,
+        "total_amount": 176640.0,
+        "po_reference": "557264956",
+        "payment_terms_days": 60
+      }
+    },
+    {
+      "case": 16,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Kiran Wholesale Mart\",\n  \"invoice_number\": \"INV-2026-67905\",\n  \"invoice_date\": \"2026-08-22\",\n  \"base_amount\": 48700.0,\n  \"gst_amount\": 8766.0,\n  \"total_amount\": 57466.0,\n  \"payment_term",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Kiran Wholesale Mart",
+        "invoice_number": "INV-2026-67905",
+        "invoice_date": "2026-08-22",
+        "base_amount": 48700.0,
+        "gst_amount": 8766.0,
+        "total_amount": 57466.0,
+        "payment_terms_days": 60
+      },
+      "gold": {
+        "vendor": "Kiran Wholesale Mart",
+        "invoice_number": "INV-2026-67905",
+        "invoice_date": "2026-08-22",
+        "base_amount": 48700.0,
+        "gst_amount": 8766.0,
+        "total_amount": 57466.0,
+        "po_reference": null,
+        "payment_terms_days": 60
+      }
+    },
+    {
+      "case": 17,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Mehta and Sons\",\n  \"invoice_number\": \"INV-2026-83563\",\n  \"invoice_date\": \"2026-04-23\",\n  \"base_amount\": 138000.0,\n  \"gst_amount\": 38000.0,\n  \"total_amount\": 176640.0,\n  \"po_reference\": ",
+      "ok_fields": 7,
+      "pred": {
+        "vendor": "Mehta and Sons",
+        "invoice_number": "INV-2026-83563",
+        "invoice_date": "2026-04-23",
+        "base_amount": 138000.0,
+        "gst_amount": 38000.0,
+        "total_amount": 176640.0,
+        "po_reference": "558038374",
+        "payment_terms_days": 30
+      },
+      "gold": {
+        "vendor": "Mehta and Sons",
+        "invoice_number": "INV-2026-83563",
+        "invoice_date": "2026-04-23",
+        "base_amount": 138000.0,
+        "gst_amount": 38640.0,
+        "total_amount": 176640.0,
+        "po_reference": "558038374",
+        "payment_terms_days": 30
+      }
+    },
+    {
+      "case": 18,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Grover Steel Traders\",\n  \"invoice_number\": \"INV-2026-70589\",\n  \"invoice_date\": \"2026-07-09\",\n  \"base_amount\": 194500.0,\n  \"gst_amount\": 35010.0,\n  \"total_amount\": 229510.0,\n  \"payment_t",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Grover Steel Traders",
+        "invoice_number": "INV-2026-70589",
+        "invoice_date": "2026-07-09",
+        "base_amount": 194500.0,
+        "gst_amount": 35010.0,
+        "total_amount": 229510.0,
+        "payment_terms_days": 30
+      },
+      "gold": {
+        "vendor": "Grover Steel Traders",
+        "invoice_number": "INV-2026-70589",
+        "invoice_date": "2026-07-09",
+        "base_amount": 194500.0,
+        "gst_amount": 35010.0,
+        "total_amount": 229510.0,
+        "po_reference": null,
+        "payment_terms_days": 30
+      }
+    },
+    {
+      "case": 19,
+      "json_valid": true,
+      "reply_head": "{\n  \"vendor\": \"Bansal Packaging Industries\",\n  \"invoice_number\": \"INV-2026-13101\",\n  \"invoice_date\": \"2026-11-07\",\n  \"base_amount\": 86600.0,\n  \"gst_amount\": 10392.0,\n  \"total_amount\": 96992.0,\n  \"po_r",
+      "ok_fields": 8,
+      "pred": {
+        "vendor": "Bansal Packaging Industries",
+        "invoice_number": "INV-2026-13101",
+        "invoice_date": "2026-11-07",
+        "base_amount": 86600.0,
+        "gst_amount": 10392.0,
+        "total_amount": 96992.0,
+        "po_reference": "556507321",
+        "payment_terms_days": 45
+      },
+      "gold": {
+        "vendor": "Bansal Packaging Industries",
+        "invoice_number": "INV-2026-13101",
+        "invoice_date": "2026-11-07",
+        "base_amount": 86600.0,
+        "gst_amount": 10392.0,
+        "total_amount": 96992.0,
+        "po_reference": "556507321",
+        "payment_terms_days": 45
+      }
+    }
+  ]
+}
