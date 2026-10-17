@@ -84,3 +84,37 @@ After:
 The after-side reproduces almost exactly: 17/20 all-fields-exact (85%) and 97.5% average field accuracy on both machines. The before-side differs in degree, not in kind: on Colab the zero-shot model emitted valid JSON for all 20 cases (vs 55% on Kaggle — different library versions), but still matched almost no fields exactly (avg 30.0% vs 10.6%). Either way, prompting alone produces unusable output for this task; fine-tuning on 80 examples produces business-correct JSON.
 
 Screenshots of the live run: `results/screenshots/`
+
+## Clean full re-run (same day, ~23 minutes) — zero errors confirmed
+
+To confirm the published worksheet runs end-to-end without errors (after the comparison-cell SyntaxError fix in commit 9a2636e), the notebook was re-executed completely fresh: loaded from GitHub, new T4 runtime, Run All.
+
+**Result: all 8 code cells executed clean — no Tracebacks, no SyntaxError.** The training cell ran normally (the earlier "already added LoRA adapters" error was a duplicate-run artifact on an already-trained kernel, not a notebook bug), and the previously-broken comparison cell printed the final table.
+
+Final cell output (verbatim):
+
+```
+| Metric | Before | After |
+|---|---|---|
+| Valid JSON | 20/20 (100.0%) | 20/20 (100.0%) |
+| Full schema (all 8 keys) | 0/20 (0.0%) | 13/20 (65.0%) |
+| All 8 fields exact | 0/20 (0.0%) | 17/20 (85.0%) |
+| Invented PO (safety, must be 0) | 0 | 0 |
+
+| Field | Before | After |
+|---|---|---|
+| vendor | 20.0% | 100.0% |
+| invoice_number | 95.0% | 100.0% |
+| invoice_date | 0.0% | 100.0% |
+| base_amount | 25.0% | 95.0% |
+| gst_amount | 30.0% | 85.0% |
+| total_amount | 15.0% | 100.0% |
+| po_reference | 45.0% | 100.0% |
+| payment_terms_days | 10.0% | 100.0% |
+
+Average field accuracy: 30.0% -> 97.5%
+```
+
+Numbers are identical to the first live run of the day — temperature 0 and seed 42 make the whole notebook reproducible.
+
+Screenshots of the clean run (GPU/installs state, execution in progress, final table): `results/screenshots/colab_cleanrun_gpu_installs.png`, `colab_cleanrun_executing.png`, `colab_cleanrun_final_table.png`.
