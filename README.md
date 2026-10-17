@@ -27,7 +27,7 @@ Teach a small open LLM (Gemma E4B) to turn messy invoice text — emails, one-li
 | data/ | Seed-42 dataset generator + golden (100) / train (80) / test (20) JSONL files |
 | eval/ | Real before/after result JSONs + the standalone llama.cpp baseline script |
 | training/ | The exact Kaggle kernel script of the reference run |
-| results/ | RESULTS.md — full tables, timing, methodology, honest notes |
+| results/ | RESULTS.md (Kaggle reference) — full tables, timing, methodology, honest notes. Plus colab_live_run_2026-10-17.md: an independent live Colab T4 run of the same notebook (same results: 0/20 -> 17/20 exact, 30.0% -> 97.5% avg), zero-error clean re-run confirmation, and screenshots/ |
 
 ## How this was made
 
